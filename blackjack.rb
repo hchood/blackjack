@@ -16,8 +16,8 @@ require_relative 'lib/deck'
 
 deck = Deck.new
 
-player_hand = Hand.new
-dealer_hand = Hand.new
+player_hand = Hand.new('Player')
+dealer_hand = Hand.new('Dealer')
 
 # DEAL INITIAL HAND
 

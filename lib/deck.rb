@@ -18,4 +18,11 @@ class Deck
 
     cards.shuffle
   end
+
+  def deal_card(hand)
+    card = cards.pop
+    hand.cards << card
+
+    puts "#{hand.player} was dealt #{card.rank}#{card.suit}"
+  end
 end
