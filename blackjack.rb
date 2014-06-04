@@ -29,7 +29,7 @@ end
 
 player_hand.output_score
 
-# ASK TO HIT OR STAND
+# PLAYER's TURN
 
 choice = nil
 
@@ -57,3 +57,31 @@ until choice == 's'
   end
 end
 
+# DEALER's TURN
+
+# As a dealer
+# I want to continue hitting until my score is at least 17
+# So that I get close to 21 without too much risk of busting.
+# Acceptance Criteria:
+
+# While the dealer's best possible hand is below 17, continue hitting.
+# If the dealer's lowest score exceeds 21, output Bust! You win!.
+
+2.times do
+  deck.deal_card(dealer_hand)
+end
+
+dealer_hand.output_score
+
+until dealer_hand.score >= 17
+  deck.deal_card(dealer_hand)
+  dealer_hand.output_score
+end
+
+puts "Dealer stands.\n\n"
+
+if dealer_hand.score > 21 || player_hand.score > dealer_hand.score
+  puts "You win!"
+else
+  puts "You lose."
+end
