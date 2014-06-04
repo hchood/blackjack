@@ -1,3 +1,7 @@
+require 'pry'
+
+require_relative 'lib/deck'
+
 # As a dealer
 # I want to initially deal out two cards to the current player
 # So that we can begin the game
@@ -10,7 +14,7 @@
 
 # CREATE DECK AND HANDS
 
-deck = Deck.new.shuffle
+deck = Deck.new
 
 player_hand = Hand.new
 dealer_hand = Hand.new
