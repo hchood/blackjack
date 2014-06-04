@@ -8,4 +8,22 @@ class Card
     @suit = suit
     @rank = rank
   end
+
+  def value
+    if face_card?
+      10
+    elsif ace?
+      11
+    else
+      rank
+    end
+  end
+
+  def face_card?
+    true if rank == 'J' || rank == 'Q' || rank == 'K'
+  end
+
+  def ace?
+    true if rank == 'A'
+  end
 end

@@ -12,6 +12,8 @@ require_relative 'lib/deck'
 # Output Player was dealt CARD for each card the player receives.
 # Output Dealer was dealt CARD for each card the dealer receives.
 
+puts "Welcome to Blackjack!\n\n"
+
 # CREATE DECK AND HANDS
 
 deck = Deck.new
@@ -19,12 +21,10 @@ deck = Deck.new
 player_hand = Hand.new('Player')
 dealer_hand = Hand.new('Dealer')
 
-# DEAL INITIAL HAND
+# DEAL INITIAL HAND TO PLAYER
 
-[player_hand, dealer_hand].each do |hand|
-  2.times do
-    deck.deal_card(hand)
-  end
+2.times do
+  deck.deal_card(player_hand)
 end
 
-
+player_hand.output_score
