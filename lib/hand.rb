@@ -7,7 +7,7 @@ class Hand
   end
 
   def output_score
-    puts "#{player}: #{score}"
+    puts "#{player}: #{score}\n\n"
   end
 
   def score

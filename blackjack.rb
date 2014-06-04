@@ -28,3 +28,32 @@ dealer_hand = Hand.new('Dealer')
 end
 
 player_hand.output_score
+
+# ASK TO HIT OR STAND
+
+choice = nil
+
+until choice == 's'
+  # ask if player wants to hit or stand
+  print "Hit or stand (H/S): "
+  choice = gets.chomp.downcase
+  puts
+
+  # output score
+  if choice == 's'
+    player_hand.output_score
+  elsif choice == 'h'
+    deck.deal_card(player_hand)
+    player_hand.output_score
+  else
+    puts "I'll take that as a stand."
+    player_hand.output_score
+  end
+
+  # if over 21, put 'Bust' and exit program
+  if player_hand.score > 21
+    puts "Bust! You lose..."
+    exit
+  end
+end
+
